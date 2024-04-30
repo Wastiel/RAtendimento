@@ -51,11 +51,22 @@ endif;
 							value="<?php echo $dados['tipo_atendimento']; ?>" minlength="8" required>
 					</div>
 
-					<div class="input-group input-group mb-3">
+					<!--<div class="input-group input-group mb-3">
 						<span class="input-group-text" id="inputGroup-sizing-sm" style="min-width: 10%;">Ativo</span>
 						<input type="text" name="ativo" id="ativo" class="form-control"
 							value="<?php echo $dados['ativo']; ?>" maxlength="1" required>
+					</div>-->
+					<div class="input-group input-group mb-3">
+						<span class="input-group-text" id="inputGroup-sizing-sm" style="min-width: 10%;">Acesso</span>
+						<select class="form-select" id="ativo" name="ativo" required>
+							<option value="" disabled>Selecione o tipo de acesso</option>
+							<option value="A" <?php echo ($dados['ativo'] == 'A') ? 'selected' : ''; ?>>
+								Ativo</option>
+							<option value="D" <?php echo ($dados['ativo'] == 'D') ? 'selected' : ''; ?>>Inativo
+							</option>
+						</select>
 					</div>
+					
 				</div>
 
 

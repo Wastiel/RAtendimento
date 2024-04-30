@@ -18,10 +18,10 @@ $sql = "insert into tipo_atendimento ( tipo_atendimento, ativo) VALUES ( '$tipo_
 echo $sql;
 
 	if(mysqli_query($connect, $sql)):
-		$_SESSION['mensagem'] = "Cadastrado com sucesso!";
+		$_SESSION['MENSAGEM'] = "Cadastrado com sucesso!";
 		header('location: ../tipo_atendimento.php');
 	else:
-		$_SESSION['mensagem'] = "Erro ao cadastrar!";	
+		$_SESSION['MENSAGEM'] = "Erro ao cadastrar!";	
 		header('location: ../tipo_atendimento.php');
 	endif;
 endif;

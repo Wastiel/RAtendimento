@@ -109,7 +109,7 @@ session_start();
 										</td>
 											<!-- excluir cliente -->
 
-											<td class="table-cell align-middle">
+										<td class="table-cell align-middle">
 										<?php if ($dados['ativo'] == 1): ?>
 											<button onclick="setDeleteId(<?php echo $dados['id_cliente']; ?>)"
 												class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal_delete">

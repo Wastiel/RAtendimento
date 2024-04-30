@@ -22,6 +22,7 @@ if(isset($_POST['btn-editar'])):
 	
 	//echo "update atendente set nome = '$nome', login = '$login', senha = '$senha', cpf = '$cpf', tipo_acesso = '$tipo_acesso' where id_atendente = '$id'";
 	
+	echo $id_tipo_atendimento; 
 	
 	
 	$sql = "update atendimento set dt_inicio = '$dt_inicio', dt_fim = '$dt_fim', id_tipo_atendimento = '$id_tipo_atendimento', 

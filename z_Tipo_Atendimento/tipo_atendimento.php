@@ -40,6 +40,9 @@ session_start();
 		function setDeleteId(id) {
 			document.getElementById('deleteId').value = id;
 		}
+		function setReativaId(id) {
+			document.getElementById('reativaId').value = id;
+		}
 	</script>
 
 </head>
@@ -76,8 +79,18 @@ session_start();
 										<?php echo $dados['tipo_atendimento']; ?>
 									</td>
 									<td class="table-cell align-middle">
-										<?php echo $dados['ativo']; ?>
-									</td>
+															<?php
+															$status = $dados['ativo'];
+															if ($status == 'A') {
+																echo '<i class="bi bi-check-circle-fill text-success"></i>'; // Ícone de ativo
+															} elseif ($status == 'D') {
+																echo '<i class="bi bi-x-circle-fill text-danger"></i>'; // Ícone de deletado
+															} else {
+																// Se o status não corresponder a nenhum dos valores esperados, exiba apenas o valor do status
+																echo $status;
+															}
+															?>
+														</td>
 									<td class="table-cell align-middle">
 										<a href="editar_Tipo_Atendimento.php?id_tipo_atendimento=<?php echo $dados['id_tipo_atendimento']; ?>"
 											class="btn btn-warning" role="button">
@@ -86,11 +99,18 @@ session_start();
 									</td>
 
 									<td class="table-cell align-middle">
-										<button onclick="setDeleteId(<?php echo $dados['id_tipo_atendimento']; ?>)"
-											class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal_delete">
-											<i class="bi bi-trash"></i> Deletar
-										</button>
-									</td>
+										<?php if ($dados['ativo'] == 'A'): ?>
+											<button onclick="setDeleteId(<?php echo $dados['id_tipo_atendimento']; ?>)"
+												class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal_delete">
+												<i class="bi bi-trash"></i> Deletar
+											</button>
+										<?php elseif ($dados['ativo'] == 'D'): ?>
+											<button onclick="setReativaId(<?php echo $dados['id_tipo_atendimento']; ?>)"
+												class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal_reativar">
+												<i class="bi bi-check"></i> Reativar
+											</button>
+										<?php endif; ?>
+										</td>
 
 								</tr>
 
@@ -116,7 +136,8 @@ session_start();
 
 		<?php
 		// carregamos alguma mensagem em tela.
-		include_once 'modal_Tipo_Atendimento.php';
+		include_once 'modal_Tipo_Atendimento.php';		
+		include_once 'modal_Tipo_Atendimento_Reativar.php';
 		include_once '../mensagem.php';
 		?>
 

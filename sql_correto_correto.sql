@@ -1,8 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS ratendimento DEFAULT CHARACTER SET utf8 ;
 USE ratendimento;
 
-
-
 CREATE TABLE atendente (
     id_atendente INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
 	login varchar(45) NOT NULL,
@@ -12,8 +10,6 @@ CREATE TABLE atendente (
 	tipo_acesso varchar(1) DEFAULT NULL,
 	ativo varchar(1) DEFAULT NULL
 );
-
-
 
 insert into atendente values (1, 'wsilva', 'd2063a446846c004df97e299fb781ea4', 'Willian Ramos da Silva','12345678911', 'A', 'A' );
 select * from atendente;
@@ -49,7 +45,7 @@ CREATE TABLE atendimento (
     dt_inicio timestamp NULL,
     descricao VARCHAR(250)NOT NULL,
 	ativo VARCHAR(1)NOT NULL,	
-    FOREIGN KEY (id_tipo_atendimento) REFERENCES atendimento(id_atendimento),
+    FOREIGN KEY (id_tipo_atendimento) REFERENCES tipo_atendimento(id_tipo_atendimento),
     FOREIGN KEY (id_atendente) REFERENCES atendente(id_atendente),
     FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );

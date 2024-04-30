@@ -48,10 +48,19 @@ endif;
 						<input type="text" name="tipo_atendimento" id="tipo_atendimento" class="form-control"
 							placeholder="Digite o nome" minlength="8" required>
 					</div>
-					<div class="input-group input-group mb-3">
+					<!--<div class="input-group input-group mb-3">
 						<span class="input-group-text" id="inputGroup-sizing-sm" style="min-width: 10%;">Ativo</span>
 						<input type="text" name="ativo" id="ativo" class="form-control" maxlength="1" required>
-					</div>					
+					</div>	-->
+					
+					<div class="input-group input-group mb-3">
+						<span class="input-group-text" id="inputGroup-sizing-sm" style="min-width: 10%;">Acesso</span>
+						<select class="form-select" id="ativo" name="ativo" required>
+							<option value="" selected disabled>Selecione Ativo/Inativo</option>
+							<option value="A">Ativo</option>
+							<option value="D">Inativo</option>
+						</select>
+					</div>
 				</div>
 
 				<button type="submit" name="btn-cadastrar" class="btn btn-secondary mt-3 float-end"><i class="bi bi-plus"></i> Cadastrar</button>			
