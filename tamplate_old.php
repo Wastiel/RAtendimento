@@ -75,28 +75,6 @@ endif;
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownCadastros" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">Cadastros - com API</a>
-            <ul class="dropdown-menu " aria-labelledby="navbarDropdownCadastros">              
-              <?php
-              // Verifica se a variável de sessão 'tipo_acesso' está definida e é igual a 'A'
-              if (isset ($_SESSION['tipo_acesso']) && $_SESSION['tipo_acesso'] === 'A') {
-                ?>
-                <li><a class="dropdown-item" href="z_Cadastros_API_Rest/atendente/atendente_api_cadastro.html" target="iframe_a"><i
-                      class="bi bi-person"></i> Cadastro de Atendente</a></li>
-                <?php
-              }
-              ?>
-              <li><a class="dropdown-item" href="z_Cadastros_API_Rest/cliente/cliente_api_cadastro.html" target="iframe_a"><i class="fas fa-users"></i>
-                  Cadastro de Cliente</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="z_Cadastros_API_Rest/tipo_Atendimento/tipo_atendimento_api_cadastro.html " target="iframe_a"><i
-                    class="fas fa-folder"></i> Cadastro de Tipo de Atendimento</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownAtendimento" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">Atendimentos</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownAtendimento">
@@ -111,7 +89,7 @@ endif;
               <li><a class="dropdown-item" href="suporte_tecnico.php" target="iframe_a"><i
                     class="fas fa-info-circle"></i> Suporte Técnico</a></li>
             </ul>
-          </li>
+          </li>0
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownRelatorios" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
