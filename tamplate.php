@@ -72,6 +72,8 @@ endif;
               </li>
               <li><a class="dropdown-item" href="z_Tipo_Atendimento/tipo_atendimento.php" target="iframe_a"><i
                     class="fas fa-folder"></i> Cadastro de Tipo de Atendimento</a></li>
+              <li><a class="dropdown-item" href="crud-php/crud_tipo_atendimento.php" target="iframe_a"><i
+                    class="fas fa-folder"></i> Cadastro_tipo_atendimento_simplificado</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
